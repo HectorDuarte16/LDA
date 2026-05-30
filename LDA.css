@@ -1,0 +1,938 @@
+/* ===================================================== */
+/* RESET GENERAL */
+/* ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+/* ===================================================== */
+/* VARIABLES */
+/* ===================================================== */
+
+:root{
+
+    --azul-principal:#0d1b2a;
+    --azul-secundario:#1b263b;
+    --azul-hover:#274c77;
+
+    --negro:#000000;
+    --gris:#202020;
+
+    --blanco:#ffffff;
+
+    --sombra:0 10px 30px rgba(0,0,0,0.4);
+
+}
+
+/* ===================================================== */
+/* BODY */
+/* ===================================================== */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:var(--negro);
+
+    color:var(--blanco);
+
+    overflow-x:hidden;
+
+}
+/* =============================== */
+/* MANTENIMIENTO */
+/* =============================== */
+
+#maintenance{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #0d1b2a,
+        #000
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.maintenance-box{
+
+    text-align:center;
+
+    max-width:600px;
+
+    padding:40px;
+
+    background:rgba(27, 38, 59, 0.8);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 40px rgba(0,0,0,0.6);
+
+    color:white;
+
+    animation:fadeIn 1s ease;
+
+}
+
+.maintenance-box h1{
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+
+}
+
+.maintenance-box p{
+
+    font-size:1.1rem;
+
+    line-height:1.6;
+
+    margin-bottom:15px;
+
+}
+
+.maintenance-box h3{
+
+    margin-top:20px;
+
+    color:#66b2ff;
+
+}
+
+/* Animación */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:scale(0.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+-----------------
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:80px;
+
+    background:rgba(13,27,42,.95);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 40px;
+
+    z-index:1000;
+
+    box-shadow:var(--sombra);
+
+}
+
+.logo{
+
+    width:55px;
+    height:55px;
+
+    object-fit:contain;
+
+}
+
+.empresa{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:2rem;
+
+    color:white;
+
+    letter-spacing:3px;
+
+}
+
+/* ===================================================== */
+/* MENÚ */
+/* ===================================================== */
+
+.nav{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+.nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.nav a:hover{
+
+    color:#66b2ff;
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:1.8rem;
+
+    cursor:pointer;
+
+    color:white;
+
+}
+
+/* ===================================================== */
+/* BANNER */
+/* ===================================================== */
+
+.banner{
+
+    height:100vh;
+
+    background-image:url("images/banner.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+.overlay{
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.70);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.overlay h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.overlay p{
+
+    font-size:1.2rem;
+
+    max-width:700px;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+/* ===================================================== */
+/* BOTÓN PRINCIPAL */
+/* ===================================================== */
+
+.btn-principal{
+
+    text-decoration:none;
+
+    background:var(--azul-hover);
+
+    color:white;
+
+    padding:15px 35px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+    font-weight:bold;
+
+}
+
+.btn-principal:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.5);
+
+}
+
+/* ===================================================== */
+/* PRODUCTOS */
+/* ===================================================== */
+
+.productos{
+
+    padding:120px 40px;
+
+    background:var(--azul-principal);
+
+}
+
+.productos h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    font-size:2.5rem;
+
+}
+
+.selector-moneda{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.selector-moneda label{
+
+    font-size:1.1rem;
+
+    margin-right:10px;
+
+}
+
+.selector-moneda select{
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--gris);
+
+    color:white;
+
+}
+
+/* ===================================================== */
+/* TARJETAS */
+/* ===================================================== */
+
+.card{
+
+    background:var(--azul-secundario);
+
+    margin-bottom:40px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--sombra);
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+.card h3{
+
+    padding:20px;
+
+    font-size:1.8rem;
+
+}
+
+.card p{
+
+    padding:0 20px 20px;
+
+    line-height:1.7;
+
+}
+
+.precio-base{
+
+    color:#7fd1ff;
+
+    font-weight:bold;
+
+}
+
+/* ===================================================== */
+/* FORMULARIOS */
+/* ===================================================== */
+
+.form-servicio{
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.form-servicio input,
+.form-servicio textarea{
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#111;
+
+    color:white;
+
+}
+
+.form-servicio textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+.resultado{
+
+    background:#111;
+
+    padding:15px;
+
+    border-radius:10px;
+
+}
+
+.resultado p{
+
+    padding:5px 0;
+
+}
+
+.solicitar{
+
+    border:none;
+
+    background:#0066ff;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:bold;
+
+}
+
+.solicitar:hover{
+
+    background:#3385ff;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================================== */
+/* PEDIDO */
+/* ===================================================== */
+
+.pedido{
+
+    padding:120px 30px;
+
+    background:#111;
+
+}
+
+.pedido h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.pedido-box{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:var(--azul-secundario);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.pedido-box p{
+
+    margin-bottom:15px;
+
+}
+
+/* ===================================================== */
+/* PAGOS */
+/* ===================================================== */
+
+.pagos{
+
+    padding:120px 40px;
+
+    background:var(--azul-principal);
+
+}
+
+.pagos h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.pagos-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.pago-card{
+
+    background:var(--azul-secundario);
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.pago-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.pago-card i{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+    color:#66b2ff;
+
+}
+
+/* ===================================================== */
+/* CONTACTO */
+/* ===================================================== */
+
+.contacto{
+
+    padding:120px 40px;
+
+    background:#111;
+
+}
+
+.contacto h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+#contactForm{
+
+    max-width:700px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+#contactForm input,
+#contactForm textarea{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#1d1d1d;
+
+    color:white;
+
+}
+
+#contactForm textarea{
+
+    min-height:150px;
+
+}
+
+#contactForm button{
+
+    border:none;
+
+    background:#0066ff;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#contactForm button:hover{
+
+    background:#3385ff;
+
+}
+
+/* ===================================================== */
+/* REDES */
+/* ===================================================== */
+
+.redes{
+
+    margin-top:40px;
+
+    text-align:center;
+
+}
+
+.redes a{
+
+    color:white;
+
+    font-size:2rem;
+
+    margin:0 15px;
+
+    transition:.3s;
+
+}
+
+.redes a:hover{
+
+    color:#66b2ff;
+
+}
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+footer{
+
+    background:#000;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+.footer-links{
+
+    margin-top:15px;
+
+}
+
+.footer-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:0 15px;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#66b2ff;
+
+}
+
+/* ===================================================== */
+/* BOTÓN WHATSAPP */
+/* ===================================================== */
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:2rem;
+
+    text-decoration:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.5);
+
+    z-index:999;
+
+    transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* ===================================================== */
+/* ANIMACIÓN APARICIÓN */
+/* ===================================================== */
+
+.card,
+.pago-card,
+.pedido-box{
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media(max-width:900px){
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .nav{
+
+        position:absolute;
+
+        top:80px;
+
+        left:0;
+
+        width:100%;
+
+        background:var(--azul-principal);
+
+        flex-direction:column;
+
+        text-align:center;
+
+        display:none;
+
+        padding:20px 0;
+
+    }
+
+    .nav.active{
+
+        display:flex;
+
+    }
+
+    .overlay h2{
+
+        font-size:2rem;
+
+    }
+
+    .overlay p{
+
+        font-size:1rem;
+
+    }
+
+    .empresa{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .productos,
+    .contacto,
+    .pagos,
+    .pedido{
+
+        padding-left:20px;
+        padding-right:20px;
+
+    }
+
+    .card img{
+
+        height:220px;
+
+    }
+
+    .whatsapp{
+
+        width:60px;
+        height:60px;
+
+    }
+
+}
