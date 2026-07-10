@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página -->
+    <title>LDA - Soluciones Digitales Profesionales</title>
+
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="LDA.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="LDA.js"></script>
+</head>
+
+<body>
+
+</div>
+------------
+
+    <!-- ========================================= -->
+    <!-- HEADER -->
+    <!-- ========================================= -->
+
+    <header class="header">
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="images/logo-empresa.png" alt="Logo LDA" class="logo">
+        </div>
+
+        <!-- Nombre -->
+        <h1 class="empresa">LDA</h1>
+
+        <!-- Botón menú móvil -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="nav" id="nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </header>
+
+    <!-- ========================================= -->
+    <!-- INICIO -->
+    <!-- ========================================= -->
+
+    <section id="inicio" class="banner">
+
+        <div class="overlay">
+
+            <h2>LDA - Soluciones Digitales Profesionales</h2>
+
+            <p>
+                Creamos documentos Word, hojas de cálculo Excel y diseños
+                de logos personalizados.
+            </p>
+
+            <a href="#productos" class="btn-principal">
+                Ver Servicios
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- PRODUCTOS -->
+    <!-- ========================================= -->
+
+    <section id="productos" class="productos">
+
+        <h2>Nuestros Servicios</h2>
+
+        <!-- Selector global de moneda -->
+
+        <div class="selector-moneda">
+
+            <label>Moneda:</label>
+
+            <select id="moneda">
+                <option value="HNL">Lempira (HNL)</option>
+                <option value="USD">Dólar (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="MXN">Peso Mexicano (MXN)</option>
+                <option value="COP">Peso Colombiano (COP)</option>
+                <option value="ARS">Peso Argentino (ARS)</option>
+                <option value="GTQ">Quetzal (GTQ)</option>
+                <option value="CRC">Colón Costarricense (CRC)</option>
+                <option value="PEN">Sol Peruano (PEN)</option>
+                <option value="BRL">Real Brasileño (BRL)</option>
+            </select>
+
+        </div>
+
+        <!-- ========================================= -->
+        <!-- WORD -->
+        <!-- ========================================= -->
+
+        <div class="card">
+
+            <img src="images/word.jpg" alt="Word">
+
+            <h3>Documentos Word</h3>
+
+            <p>
+                Elaboración profesional de documentos académicos,
+                empresariales, informes, tareas y mucho más.
+            </p>
+
+            <p class="precio-base">
+                Precio Base: 5 L por página
+            </p>
+
+            <form class="form-servicio">
+
+                <input type="text"
+                    placeholder="Nombre del cliente"
+                    required>
+
+                <input type="number"
+                    id="wordPaginas"
+                    placeholder="Número de páginas"
+                    min="1">
+
+                <input type="text"
+                    placeholder="Tipo de documento">
+
+                <textarea
+                    placeholder="Detalles adicionales"></textarea>
+
+                <div class="resultado">
+                    <p>Total HNL:
+                        <span id="wordTotalHNL">0</span>
+                    </p>
+
+                    <p>Total Convertido:
+                        <span id="wordConvertido">0</span>
+                    </p>
+                </div>
+
+                <button type="button"
+                    class="solicitar"
+                    onclick="solicitarServicio(
+                    'Documentos Word',
+                    document.getElementById('wordPaginas').value,
+                    5,
+                    document.getElementById('wordTotalHNL').innerText)">
+                    Solicitar Servicio
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- ========================================= -->
+        <!-- EXCEL -->
+        <!-- ========================================= -->
+
+        <div class="card">
+
+            <img src="images/excel.jpg" alt="Excel">
+
+            <h3>Hojas de Cálculo Excel</h3>
+
+            <p>
+                Desarrollo de hojas de cálculo,
+                fórmulas, reportes, inventarios y análisis.
+            </p>
+
+            <p class="precio-base">
+                Precio Base: 10 L por hoja
+            </p>
+
+            <form class="form-servicio">
+
+                <input type="text"
+                    placeholder="Nombre">
+
+                <input type="number"
+                    id="excelHojas"
+                    placeholder="Número de hojas"
+                    min="1">
+
+                <input type="text"
+                    placeholder="Tipo de trabajo">
+
+                <textarea
+                    placeholder="Descripción"></textarea>
+
+                <div class="resultado">
+                    <p>Total HNL:
+                        <span id="excelTotalHNL">0</span>
+                    </p>
+
+                    <p>Total Convertido:
+                        <span id="excelConvertido">0</span>
+                    </p>
+                </div>
+
+                <button type="button"
+                    class="solicitar"
+                    onclick="solicitarServicio(
+                    'Hojas Excel',
+                    document.getElementById('excelHojas').value,
+                    10,
+                    document.getElementById('excelTotalHNL').innerText)">
+                    Solicitar Servicio
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- ========================================= -->
+        <!-- LOGOS -->
+        <!-- ========================================= -->
+
+        <div class="card">
+
+            <img src="images/logo.jpg" alt="Logo">
+
+            <h3>Diseño de Logos</h3>
+
+            <p>
+                Diseños modernos y personalizados
+                para empresas, emprendimientos y marcas.
+            </p>
+
+            <p class="precio-base">
+                Precio Base: 150 L por logo
+            </p>
+
+            <form class="form-servicio">
+
+                <input type="text"
+                    placeholder="Nombre">
+
+                <input type="text"
+                    placeholder="Nombre de la empresa">
+
+                <input type="text"
+                    placeholder="Tipo de negocio">
+
+                <textarea
+                    placeholder="Descripción del logo"></textarea>
+
+                <div class="resultado">
+                    <p>Total HNL:
+                        <span id="logoTotalHNL">150</span>
+                    </p>
+
+                    <p>Total Convertido:
+                        <span id="logoConvertido">0</span>
+                    </p>
+                </div>
+
+                <button type="button"
+                    class="solicitar"
+                    onclick="solicitarServicio(
+                    'Diseño de Logos',
+                    1,
+                    150,
+                    150)">
+                    Solicitar Servicio
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- ESPECIFICAR PEDIDO -->
+    <!-- ========================================= -->
+
+    <section id="pedido" class="pedido">
+
+        <h2>Especificar Pedido</h2>
+
+        <div class="pedido-box">
+            <p>
+                <strong>Total Convertido:</strong>
+                <span id="pedidoConvertido">-</span>
+            </p>
+
+            <p>
+                <strong>Servicio:</strong>
+                <span id="pedidoServicio">-</span>
+            </p>
+
+            <p>
+                <strong>Cantidad:</strong>
+                <span id="pedidoCantidad">-</span>
+            </p>
+
+            <p>
+                <strong>Precio Unitario:</strong>
+                <span id="pedidoUnitario">-</span>
+            </p>
+
+            <p>
+                <strong>Precio Total:</strong>
+                <span id="pedidoTotal">-</span>
+            </p>
+
+            <p>
+                <strong>Moneda:</strong>
+                <span id="pedidoMoneda">HNL</span>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- MÉTODOS DE PAGO -->
+    <!-- ========================================= -->
+
+    <section class="pagos">
+
+        <h2>Métodos de Pago</h2>
+
+        <div class="pagos-grid">
+
+            <div class="pago-card">
+                <i class="fas fa-credit-card"></i>
+                <h3>Tarjeta de Crédito</h3>
+                <p>Próximamente disponible</p>
+            </div>
+
+            <div class="pago-card">
+                <i class="fas fa-money-check"></i>
+                <h3>Tarjeta de Débito</h3>
+                <p>Próximamente disponible</p>
+            </div>
+
+            <div class="pago-card">
+                <i class="fas fa-building-columns"></i>
+                <h3>Transferencia</h3>
+                <p>Próximamente disponible</p>
+            </div>
+
+            <div class="pago-card">
+                <i class="fab fa-paypal"></i>
+                <h3>PayPal</h3>
+                <p>Próximamente disponible</p>
+            </div>
+
+            <div class="pago-card">
+                <i class="fas fa-mobile-screen-button"></i>
+                <h3>Pago Móvil</h3>
+                <p>Próximamente disponible</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- CONTACTO -->
+    <!-- ========================================= -->
+
+    <section id="contacto" class="contacto">
+
+        <h2>Contacto</h2>
+
+        <form id="contactForm">
+
+            <input type="text"
+                placeholder="Nombre"
+                required>
+
+            <input type="email"
+                placeholder="Correo Electrónico"
+                required>
+
+            <textarea
+                placeholder="Mensaje"
+                required></textarea>
+
+            <button type="submit">
+                Enviar
+            </button>
+
+        </form>
+
+        <div class="redes">
+
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+            <a href="#"><i class="fab fa-facebook"></i></a>
+
+            <a href="#"><i class="fab fa-youtube"></i></a>
+
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 LDA. Todos los derechos reservados.
+        </p>
+
+        <div class="footer-links">
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Redes Sociales</a>
+        </div>
+
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <!-- ========================================= -->
+
+    <!--
+    Reemplazar 50499999999
+    por el número real
+    -->
+
+    <a href="https://wa.me/50498546673"
+        class="whatsapp"
+        target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
